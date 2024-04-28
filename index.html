@@ -8,12 +8,12 @@
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/6d301a8737.js" crossorigin="anonymous"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <title>ToDos</title>
 </head>
 <body>
     <div class="text-center" id="title">My ToDos</div>
-    <div class="container">
+    <div class="container box-shadow">
         <table class="table table-hover table-responsive-sm">
             <thead>
             <tr>
@@ -29,27 +29,27 @@
                 <td>Beispielseite mit dem Bootstrap Framework anlegen</td>
                 <td>26. April 2021</td>
                 <td>0%</td>
-                <td><button type="button" class="btn btn-primary"> <i class="fa-solid fa-pen-to-square"></i> </button></td>
-                <td><button type="button" class="btn btn-danger"> <i class="fa-solid fa-trash"></i> </button></td>
+                <td><button type="button" class="edit btn btn-primary" onClick="location.href='edit.html'"> <i class="fa-solid fa-pen-to-square"></i> </button></td>
+                <td><button type="button" class="delete btn btn-danger"> <i class="fa-solid fa-trash"></i> </button></td>
             </tr>
             <tr>
                 <td>Finish the index page</td>
                 <td>27. April 2021</td>
                 <td>80%</td>
-                <td><button type="button" class="btn btn-primary"> <i class="fa-solid fa-pen-to-square"></i> </button></td>
-                <td><button type="button" class="btn btn-danger"> <i class="fa-solid fa-trash"></i> </button></td>
+                <td><button type="button" class="edit btn btn-primary" onClick="location.href='edit.html'"> <i class="fa-solid fa-pen-to-square"></i> </button></td>
+                <td><button type="button" class="delete btn btn-danger"> <i class="fa-solid fa-trash"></i> </button></td>
             </tr>
             <tr>
                 <td>Push and send a merge request</td>
                 <td>27. April 2021</td>
                 <td>0%</td>
-                <td><button type="button" class="btn btn-primary"> <i class="fa-solid fa-pen-to-square"></i> </button></td>
-                <td><button type="button" class="btn btn-danger"> <i class="fa-solid fa-trash"></i> </button></td>
+                <td><button type="button" class="edit btn btn-primary" onClick="location.href='edit.html'"> <i class="fa-solid fa-pen-to-square"></i> </button></td>
+                <td><button type="button" class="delete btn btn-danger"> <i class="fa-solid fa-trash"></i> </button></td>
             </tr>
             </tbody>
         </table>
-        <div class="d-flex">
-            <button type="button" class="btn btn-lg btn-success">
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-lg btn-success btn-new" onClick="location.href='new.html'">
                 <i class="fa-solid fa-plus"></i>
             </button>
         </div>
