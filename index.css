@@ -1,6 +1,6 @@
 #title {
     padding: 1.5% 0 2.5% 0;
-    font-size: 7em;
+    font-size: 5em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
@@ -15,4 +15,8 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+}
+
+.d-flex button {
+    margin: auto 2% 2% 0%;
 }
