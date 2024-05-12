@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>New</title>
+{% endblock %}
+{% block body %}
+    <!-- Page title  -->
+    <div class="text-center" id="title">Create a ToDo</div>
+    
+    <!-- Content form  -->
+    <form action="/new" method="POST">
+        <div class="container box-shadow">
+            <table class="table table-responsive-sm">
+                <!-- Input headers  -->
+                <thead>
+                <tr>
+                    <th scope="col" style="width: 80%;">ToDo Text</th>
+                    <th scope="col" style="width: 20%;">Deadline</th>
+                </tr>
+                </thead>
+                <!-- Input fields  -->
+                <tbody>
+                    <tr>
+                        <!-- Todo content  -->
+                        <td>
+                            <input type="text" name="content" class="form-control" placeholder="ToDo" aria-describedby="groessen-addon2">
+                        </td>
+                        <!-- Todo deadline  -->
+                        <td>
+                            <input type="date" name="deadline" class="form-control" placeholder="Deadline" aria-describedby="groessen-addon2">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Actions  -->
+            <div class="d-flex justify-content-center">
+                <!-- Save Button  -->
+                <button type="submit" class="btn btn-lg btn-primary mr-2" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    Save
+                </button>
+                <!-- Back button  -->
+                <button type="button" class="btn btn-lg btn-primary" onClick="location.href='/'" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    Back 
+                </button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

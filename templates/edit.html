@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Edit</title>
+{% endblock %}
+{% block body %}
+    <!-- Page title  -->
+    <div class="text-center" id="title">Edit ToDo</div>
+    
+    <!-- Content form -->
+    <form action="/edit/{{ todo.id }}" method="POST">
+        <div class="container box-shadow">
+            <table class="table table-hover table-responsive-sm">
+                <!-- Input headers  -->
+                <thead>
+                <tr>
+                    <th scope="col" style="width: 60%;">ToDo Text</th>
+                    <th scope="col">Deadline</th>
+                    <th scope="col" style="width: 15%;">Progress</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <!-- Input fields  -->
+                <tbody>
+                <tr>
+                    <!-- Todo content  -->
+                    <td>
+                        <input type="text" class="form-control" value="{{ todo.content }}" name="content" aria-describedby="groessen-addon2">
+                    </td>
+                    <!-- Todo deadline  -->
+                    <td>
+                        <input type="date" class="form-control" name="deadline" value="{{ todo.deadline }}" aria-describedby="groessen-addon2">
+                    </td>
+                    <!-- Todo progress  -->
+                    <td>
+                        <div class="input-group">
+                            <input type="number" class="form-control" value="{{ todo.progress }}" name="progress"  aria-describedby="groessen-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                    </td>
+                    <!-- Delete todo  -->
+                    <td><button type="button" class="btn btn-danger" onClick="location.href='/delete/{{ todo.id }}'"> <i class="fa-solid fa-trash"></i> </button></td>
+                </tr>
+                </tbody>
+            </table>
+            <!-- Actions  -->
+            <div class="d-flex justify-content-center">
+                <!-- Save Button  -->
+                <button type="submit" class="btn btn-lg btn-primary mr-2" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    Save
+                </button>
+                <!-- Back button  -->
+                <button type="button" class="btn btn-lg btn-primary" onClick="location.href='/'" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    Back 
+                </button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
