@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>ToDos</title>
+{% endblock %}
+{% block body %}
+    <!-- Title  -->
+    <div class="text-center" id="title">My ToDos</div>
+    <!-- Todo Table  -->
+    <div class="container box-shadow">
+        {% if todos|length < 1 %}
+            <h1 class="text-center display-6">No todos yet. Add some below!</h1>
+        {% else %}
+            <table class="table table-hover table-responsive-sm">
+                <!-- Todo Headers  -->
+                <thead>
+                <tr>
+                    <th scope="col">ToDo Text</th>
+                    <th scope="col">Deadline</th>
+                    <th scope="col">Progress</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <!-- Todos  -->
+                <tbody>
+                {% for todo in todos %}
+                    <tr>
+                        <td>{{ todo.content }}</td>
+                        <td>{{ todo.deadline }}</td>
+                        <td>{{ todo.progress }}%</td>
+                        <!-- edit  -->
+                        <td><button type="button" class="edit btn btn-primary" onClick="location.href='edit/{{ todo.id }}'"> <i class="fa-solid fa-pen-to-square"></i> </button></td>
+                        <!-- delete  -->
+                        <td><button type="button" class="delete btn btn-danger" onclick="location.href='/delete/{{ todo.id }}'"> <i class="fa-solid fa-trash"></i> </button></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+        <!-- Add new Todo -->
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-lg btn-success btn-new" onClick="location.href='new'">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+    </div>
+{% endblock %}
